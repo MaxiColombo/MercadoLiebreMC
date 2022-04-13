@@ -4,9 +4,7 @@ const path = require("path");
 
 app.use(express.static(path.resolve(__dirname,"./public")));
 
-app.listen(3002,() => {
-console.log("El servidor esta corriendo en http://localhost:3002")
-});
+app.listen(process.env.PORT || 3002, function() { console.log("El servidor esta corriendo en http://localhost:3002"); });
 
 app.get("/",(req,res)=> {
 res.sendFile(path.resolve(__dirname,"./views/home.html"))
